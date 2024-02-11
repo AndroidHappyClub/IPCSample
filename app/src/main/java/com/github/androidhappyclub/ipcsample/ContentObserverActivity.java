@@ -32,7 +32,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
-import android.util.Log;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -104,8 +103,6 @@ public class ContentObserverActivity extends LifecycleActivity {
             if (StudentObserver.DATA_CHANGED == msg.what) {
                 Student student = (Student) msg.obj;
                 ContentObserverActivity activity = mWr.get();
-                Log.d(activity.TAG, "获取到的学生对象: " + student);
-                Log.d(activity.TAG, "当前是否在主线程" + (Looper.myLooper() == Looper.getMainLooper()));
                 activity.mBinding.getContent.setText("获取到的学生信息：" + student);
             }
         }

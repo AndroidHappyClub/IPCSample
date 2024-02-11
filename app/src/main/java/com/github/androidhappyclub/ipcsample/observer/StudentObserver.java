@@ -45,7 +45,6 @@ import com.github.androidhappyclub.ipcsample.model.Student;
 public class StudentObserver extends ContentObserver {
 
     public static final int DATA_CHANGED = 0x01;
-    private static final String TAG = StudentObserver.class.getSimpleName();
     private final Context mContext;
     private final Handler mHandler;
 
@@ -53,12 +52,6 @@ public class StudentObserver extends ContentObserver {
         super(handler);
         mHandler = handler;
         mContext = context;
-    }
-
-    @Override
-    public void onChange(boolean selfChange) {
-        super.onChange(selfChange);
-        Log.d(TAG, "监听到改变");
     }
 
     @Override
